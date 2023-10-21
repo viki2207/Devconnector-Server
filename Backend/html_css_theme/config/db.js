@@ -4,12 +4,15 @@ const config = require('config');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017', {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true
-    });
+    await mongoose.connect(
+      'mongodb+srv://root:root@cluster0.f8bifn6.mongodb.net/DevConnector'
+      // {
+      //   useNewUrlParser: true,
+      //   useCreateIndex: true,
+      //   useFindAndModify: false,
+      //   useUnifiedTopology: true
+      // }
+    );
 
     console.log('MongoDB Connected...');
   } catch (err) {
@@ -20,3 +23,4 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+//mongodb://localhost:27017
