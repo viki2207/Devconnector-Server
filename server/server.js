@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('./config/db');
+const connectDB = require('./html_css_theme/config/db');
 const path = require('path');
 
 const app = express();
@@ -11,10 +11,10 @@ connectDB();
 app.use(express.json());
 
 // Define Routes
-app.use('/api/users', require('./routes/api/users'));
-app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/profile', require('./routes/api/profile'));
-app.use('/api/posts', require('./routes/api/posts'));
+app.use('/api/users', require('./html_css_theme/routes/api/users'));
+app.use('/api/auth', require('./html_css_theme/routes/api/auth'));
+app.use('/api/profile', require('./html_css_theme/routes/api/profile'));
+app.use('/api/posts', require('./html_css_theme/routes/api/posts'));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -26,6 +26,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const PORT = process.env.PORT || 5015;
+const PORT = process.env.PORT || 5016;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
